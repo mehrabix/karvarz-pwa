@@ -1,0 +1,39 @@
+<div class="h-full w-full bg-amber-100">
+    <button my-button>دکمه تست</button>
+
+
+    <!-- <button (click)="back()" class="bg-amber-950 text-white">بازگشت</button> -->
+
+    <!-- {{galleryItems | json}} -->
+
+    <p-button #submit label="Submit" />
+
+    <div class="grid grid-cols-3 gap-3">
+        @for (item of galleryItems; track $index) {
+            شماره: {{$index}}
+            
+            <gallery-item #galleryItem [title]="item.products[0].title" [img]="item.products[0].thumbnail" [id]="item.id" (onDelete)="handleDelete($event)">
+
+
+            </gallery-item>
+    
+        }
+    </div>
+
+
+  
+
+    
+
+
+    <!-- @if (true)
+    
+    @else
+    
+    
+    @else if{}
+
+@switch (
+
+) {} -->
+</div>

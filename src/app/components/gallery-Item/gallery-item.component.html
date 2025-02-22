@@ -1,0 +1,26 @@
+<div class="h-24 bg-amber-500 rounded-2xl">
+    {{title}}
+    <img class="h-16" [src]="img" alt="">
+    <button class="bg-red-950 text-white rounded-2xl cursor-pointer" (click)="handleDelete()">حذف</button>
+    <button  (click)="showDialog()" class="bg-amber-900 text-white rounded-2xl cursor-pointer">ویرایش</button>
+</div>
+
+
+<p-dialog [(visible)]="isOpen" [modal]="true" [style]="{ width: '25rem' }">
+    <ng-template #header>
+        <div class="inline-flex items-center justify-center gap-2">
+            <p-avatar image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png" shape="circle" />
+            <span class="font-bold whitespace-nowrap">Amy Elsner</span>
+        </div>
+    </ng-template>
+    <div class="flex flex-col gap-2">
+        <label for="username">عنوان</label>
+        <input pInputText id="username" aria-describedby="username-help" [(ngModel)]="inputTitle" />
+        <small id="username-help">Enter your username to reset your password.</small>
+    </div>
+    <ng-template #footer>
+        <p-button label="لغو" [text]="true" severity="secondary" (click)="closeDialog()" />
+        <p-button label="ذخیره" [outlined]="true" severity="secondary" (click)="saveData()" />
+        <input type="file">
+    </ng-template>
+</p-dialog>
