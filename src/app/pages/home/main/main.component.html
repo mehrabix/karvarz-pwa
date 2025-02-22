@@ -4,6 +4,18 @@ Main Page
 <p-button (click)="forward()" label="قبلی" />
 
 <div>
+    <p-card styleClass="user-form" class="flex justify-content-center">
+        <form [formGroup]="userForm" (ngSubmit)="getFormData()" novalidate>
+            <label for="firstName" class="block">نام</label>
+            <input type="text" pInputText placeholder="نام خود را وارد نمائید..." formControlName="firstName" />
 
-    
+            <label for="lastName" class="block">نام خانوادگی</label>
+            <input type="text" pInputText placeholder="نام خانوادگی خود را وارد نمائید..." formControlName="lastName" />
+
+
+            <button pButton type="submit" label="Submit" [disabled]="userForm.invalid"></button>
+
+        </form>
+    </p-card>
+
 </div>
